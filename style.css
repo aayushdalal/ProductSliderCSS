@@ -1,0 +1,149 @@
+*{
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.universe{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(https://media.istockphoto.com/id/1168092599/photo/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare.webp?a=1&b=1&s=612x612&w=0&k=20&c=Ki3K-ISach5QR2b5LFNRZVrkjpNLjJLsN2BXxp6G6qQ=);
+    background-size: cover;
+    position: relative;
+}
+.highway{
+    background-image: url(https://images.unsplash.com/photo-1520699514109-b478c7b48d3b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM1fHxyb2FkfGVufDB8fDB8fHww);
+    height: 150px;
+    width: 10000vw;
+    position: absolute;
+    /* dont give cover property here as we dont want to cover our image */
+    bottom: 0;
+    animation-name: highway;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background-repeat: repeat-x;
+    /* now on tranlsating image our bakcground will repeat to make it work. give width like 10 times  */
+}
+.city{
+    background-image: url(https://www.shutterstock.com/shutterstock/videos/1068432986/thumb/1.jpg?ip=x480);
+    height: 30vh;
+    width: 10000vw;
+    position: absolute;
+    bottom: 150px;
+    animation-name: city;
+    animation-fill-mode: forwards;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background-repeat: repeat-x;
+}
+h1{
+    margin: 5px;
+    color: blue;
+    width: max-content;
+    animation-name: slider;
+    animation-duration: 25s;
+    animation-timing-function:linear ;
+    animation-iteration-count: infinite;
+    /* background-repeat: repeat-x; */
+}
+h1:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+.row{
+    /* animation-name: slider2; */
+    background-color: blueviolet;
+    display: flex;
+    width: max-content;
+    /* to set the natural width of the row. let it occupy as much as it needs */
+    margin: 10px;
+    margin-bottom: 100px;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    gap: 10px;
+    animation-duration: 15s;
+    animation-timing-function:linear ;
+    animation-iteration-count: infinite;
+    /* this repeat function only works with images dumbasss!! */
+    /* background-repeat: repeat-x; */
+}
+/* .rowjs1{
+    animation-name: slider3;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+.rowjs2{
+    animation-name: slider4;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+} */
+
+/* to make transition smoother we can add */
+#cards {
+    transition: transform 0.5s ease-in-out;
+}
+
+.imagg{
+    position: relative;
+    display: flex;
+    /* border: 1px solid black; */
+    align-items: center;
+    justify-content: space-around;
+}
+.imagg aside{
+    /* position: absolute; */
+
+    font-size: 5em;
+    /* background-color: pink; */
+    color: blueviolet;
+}
+
+aside:active{
+    color: palevioletred;
+    cursor: pointer;
+
+}
+@keyframes slider {
+    0%{
+        transform: translateX(1000px);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes slider2 {
+   
+    100%{
+        transform: translateX(-100%);
+    }
+}
+/* we solved the slider issue using dynamic translate in js only , also adding keyframes make our code slower */
+/* @keyframes slider3 {
+    100%{
+        transform: translateX(400px);
+    }
+}
+@keyframes slider4 {
+    100%{
+        transform: translateX(-400px);
+    }
+} */
+@keyframes highway {
+    100%{
+        transform: translateX(-2000px);
+    }
+}
+@keyframes city {
+    100%{
+        transform: translateX(-500px);
+    }
+}
